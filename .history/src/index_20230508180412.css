@@ -1,0 +1,92 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Wcomponents */
+.wcomp::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  background: #696f78;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b4b8bf;
+}
+
+
+.EcommerceAdminLogin {
+  color: #fff;
+  background-color: #19376d;
+  padding: 10px;
+  width: 380px;
+  text-align: center;
+  font-size: 20px;
+  background: linear-gradient(to left, #19376d 50%, #fff 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  border: 1px solid #19376d;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.EcommerceAdminLogin:hover {
+  background-position: left;
+  color: #19376d;
+}
+
+.main-card--container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+  justify-content: space-evenly;
+}
+.card-container {
+  margin: 25px 0 auto;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.img-thumbnail {
+  width: 80px;
+}
+.img-large {
+  max-width: 80%;
+}
+
+.formInput {
+  padding: 5px;
+}
+
+
+
+.cardDiv {
+  cursor: pointer;
+}
+
+.cardDiv:hover .iCOn {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.3);
+}

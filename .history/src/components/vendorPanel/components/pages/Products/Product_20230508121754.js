@@ -39,7 +39,7 @@ const Product = () => {
     const fetchCategory = async () => {
       try {
         const { data } = await axios.get(
-          "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/catogory/getAllCategory"
+          "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev//api/v1//catogory/getAllCategory"
         );
         setP(data);
       } catch (e) {

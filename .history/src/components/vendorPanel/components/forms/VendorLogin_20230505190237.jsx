@@ -90,17 +90,17 @@ const VendorLogin = () => {
                     LOG In
                   </span>
 
-      F            <BiLogInCircle className="pl-1.5 text-2xl" />
+                  <BiLogInCircle className="pl-1.5 text-2xl" />
                 </div>
               )}
             </button>
-            {/* <button
+            <button
               type="button"
               onClick={() => navigate("/vendorLogin")}
               className="py-2 cursor-pointer tracking-wider bg-orange-600 flex justify-center items-center w-full rounded-md font-medium   "
             >
               Vendor Panel
-            </button> */}
+            </button>
           </section>
         </form>
       </div>

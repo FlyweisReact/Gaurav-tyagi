@@ -105,60 +105,13 @@ const DeliveryPartner = () => {
       <section>
         <div className="pb-4 sticky top-0  w-full flex justify-between items-center bg-white">
           <span className="tracking-widest text-slate-900 font-semibold uppercase ">
-            All Delivery Partner's
+            All Delivery Partner's ( Total : {data?.message?.length})
           </span>
         </div>
 
-        {data?.message?.length === 0 || data?.message === "No Data Found "
+        {data?.message?.length === 0 || !data
         
-        ? <Alert >No Data Found</Alert> :      <div style={{ maxWidth: "100%", overflow: "auto" }}>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>SNo.</th>
-                <th> Name</th>
-                <th> Phone</th>
-                <th> Email</th>
-                <th>Status</th>
-                <th>Order</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data?.message?.map((i, index) => (
-                <tr key={index}>
-                  <td> #{index + 1} </td>
-                  <td> {i.Name} </td>
-                  <td> {i.phone} </td>
-                  <td> {i.email} </td>
-                  <td> {i.status} </td>
-                  <td>
-                    <Button onClick={() => navigate(`/deliveryOrder/${i._id}`)}>
-                      View
-                    </Button>
-                  </td>
-                  <td>
-                    <span className="d-flex gap-2">
-                      <i
-                        className="fa-solid fa-trash"
-                        onClick={() => deleteHandler(i._id)}
-                        style={{ color: "red", cursor: "pointer" }}
-                      />
-                      <i
-                        className="fa-solid fa-edit"
-                        onClick={() => {
-                          setId(i._id);
-                          setModalShow(true);
-                        }}
-                        style={{ color: "blue", cursor: "pointer" }}
-                      />
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
+        ? <Alert >No Data Found</Alert> : 
           } 
 
    

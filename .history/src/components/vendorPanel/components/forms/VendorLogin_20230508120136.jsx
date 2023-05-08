@@ -90,7 +90,7 @@ const VendorLogin = () => {
                     LOG In
                   </span>
 
-      F            <BiLogInCircle className="pl-1.5 text-2xl" />
+                  <BiLogInCircle className="pl-1.5 text-2xl" />
                 </div>
               )}
             </button>

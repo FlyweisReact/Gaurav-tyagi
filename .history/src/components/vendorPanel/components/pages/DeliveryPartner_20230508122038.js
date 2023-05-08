@@ -105,11 +105,11 @@ const DeliveryPartner = () => {
       <section>
         <div className="pb-4 sticky top-0  w-full flex justify-between items-center bg-white">
           <span className="tracking-widest text-slate-900 font-semibold uppercase ">
-            All Delivery Partner's
+            All Delivery Partner's ( Total : {data?.message?.length})
           </span>
         </div>
 
-        {data?.message?.length === 0 || data?.message === "No Data Found "
+        {data?.message?.length === 0 || data
         
         ? <Alert >No Data Found</Alert> :      <div style={{ maxWidth: "100%", overflow: "auto" }}>
           <Table striped bordered hover>

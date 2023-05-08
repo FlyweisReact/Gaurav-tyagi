@@ -11,7 +11,7 @@ import { TbDiscount } from "react-icons/tb";
 import { AiFillMessage } from "react-icons/ai";
 import { FiImage } from "react-icons/fi";
 import {FaProductHunt , FaUserCircle} from 'react-icons/fa'
-// import {GrUserManager} from 'react-icons/gr'
+import {GrUserManager} from 'react-icons/gr'
 
 const Sidebar = ({ hamb, setHamb }) => {
   const navigate = useNavigate();
@@ -91,7 +91,7 @@ const Sidebar = ({ hamb, setHamb }) => {
 
   const logOut = () => {
     localStorage.removeItem("token");
-    navigate("/");
+    navigate("/vendorLogin");
   };
 
   return (

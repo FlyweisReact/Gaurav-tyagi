@@ -36,7 +36,7 @@ const Terms = () => {
         e.preventDefault();
         try {
           const { data } = await axios.put(
-            "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/terms/64589cce1bd9da3ef3cfa88d",
+            "http://ec2-15-206-210-177.ap-south-1.compute.amazonaws.com:5005/api/v1/terms/63e4d098eb79be1cd58ad351",
             { terms : couponCode }
           );
           console.log(data);
@@ -90,7 +90,7 @@ const Terms = () => {
         <section>
           <div className="pb-4 sticky top-0  w-full flex justify-between items-center bg-white">
             <span className="tracking-widest text-slate-900 font-semibold uppercase ">
-             Terms and Condition
+             Privacy Policy
             </span>
          
           </div>

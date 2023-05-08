@@ -17,7 +17,7 @@ const SubAdmin = () => {
   const fetchData = async () => {
     try {
       const { data } = await axios.get(
-        "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/subadmin"
+        "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev//api/v1/subadmin"
       );
       setData(data);
     } catch (e) {

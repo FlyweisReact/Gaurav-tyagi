@@ -37,7 +37,7 @@ const Privacy = () => {
       e.preventDefault();
       try {
         const { data } = await axios.put(
-          "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/privacy/64589ca01bd9da3ef3cfa886",
+          "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/privacy/6400a15212654ffc42a59f6b",
           { privacy: couponCode }
         );
         console.log(data);

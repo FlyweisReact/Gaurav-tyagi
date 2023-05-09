@@ -87,9 +87,11 @@ const Product = () => {
           .then((res) => res.json())
           .then((data) => {
             setImageArray((prevArray) => [...prevArray, data.url]);
-            setImageLoading(false);
+            setImageLoading(true);
             setSuccessMessage(true);
-
+            setTimeout(() => {
+               set 
+            },[1000])
           })
           .catch((err) => {
             console.log(err);

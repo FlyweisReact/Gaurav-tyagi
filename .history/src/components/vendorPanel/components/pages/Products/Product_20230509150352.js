@@ -89,7 +89,7 @@ const Product = () => {
             setImageArray((prevArray) => [...prevArray, data.url]);
             setImageLoading(false);
             setSuccessMessage(true);
-
+      
           })
           .catch((err) => {
             console.log(err);

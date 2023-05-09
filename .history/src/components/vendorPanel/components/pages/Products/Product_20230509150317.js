@@ -87,14 +87,15 @@ const Product = () => {
           .then((res) => res.json())
           .then((data) => {
             setImageArray((prevArray) => [...prevArray, data.url]);
-            setImageLoading(false);
-            setSuccessMessage(true);
-
+            setImageLoading(true);
+            
+      setSuccessMessage(true);
           })
           .catch((err) => {
             console.log(err);
           });
       });
+      setImageLoading(false);
     };
 
     const postData = async (e) => {
@@ -145,11 +146,7 @@ const Product = () => {
               ""
             )}
 
-            {successMessage ? (
-              <Alert variant="success">Image Uploaded SuccessFully</Alert>
-            ) : (
-              ""
-            )}
+            {successMessage ? <Alert variant="success">Image Uploaded SuccessFully</Alert> : ""}
 
             <div className="d-flex gap-2" style={{ alignItems: "center" }}>
               <Form.Group className="mb-3">

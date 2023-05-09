@@ -87,14 +87,14 @@ const Product = () => {
           .then((res) => res.json())
           .then((data) => {
             setImageArray((prevArray) => [...prevArray, data.url]);
-            setImageLoading(false);
+            setImageLoading(true);
             setSuccessMessage(true);
-
           })
           .catch((err) => {
             console.log(err);
           });
       });
+      setImageLoading(false);
     };
 
     const postData = async (e) => {

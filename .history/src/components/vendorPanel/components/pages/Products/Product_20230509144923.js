@@ -4,14 +4,7 @@ import HOC from "../../layout/HOC";
 import Table from "react-bootstrap/Table";
 import OwlCarousel from "react-owl-carousel2";
 import "react-owl-carousel2/lib/styles.css";
-import {
-  Alert,
-  Button,
-  FloatingLabel,
-  Form,
-  Modal,
-  Spinner,
-} from "react-bootstrap";
+import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -68,14 +61,13 @@ const Product = () => {
     const [colors, setColor] = useState("");
     const [Stock, setStock] = useState("");
     const [category, setCategory] = useState("");
-    const [manyImages, setManyImages] = useState([]);
-    const [imageArray, setImageArray] = useState([]);
-    const [imageLoading, setImageLoading] = useState(false);
-    const [successMessage, setSuccessMessage] = useState(false);
+    const [image, setImage] = useState("");
+    const [ manyImages , setManyImages ] = useState([])
+    const [ imageArray , setImageArray ] = useState([])
 
-    const uploadImages = (e) => {
+
+    const postthumbImage = (e) => {
       const data = new FormData();
-      setImageLoading(true);
       Array.from(manyImages).forEach((img) => {
         data.append("file", img);
         data.append("upload_preset", "ml_default");
@@ -87,9 +79,7 @@ const Product = () => {
           .then((res) => res.json())
           .then((data) => {
             setImageArray((prevArray) => [...prevArray, data.url]);
-            setImageLoading(false);
-            setSuccessMessage(true);
-
+            console.log("Uploaded", data.url);
           })
           .catch((err) => {
             console.log(err);
@@ -103,15 +93,7 @@ const Product = () => {
         const { data } = await axios.post(
           "https://6nkuu0ytgg.execute-api.ap-south-1.amazonaws.com/dev/api/v1/admin/product/new",
           {
-            name,
-            description,
-            price,
-            ratings,
-            size,
-            colors,
-            Stock,
-            category,
-            images: imageArray,
+            name , 
           }
         );
         console.log(data);
@@ -137,37 +119,14 @@ const Product = () => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={postData}>
-            {imageLoading ? (
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
-            ) : (
-              ""
-            )}
-
-            {successMessage ? (
-              <Alert variant="success">Image Uploaded SuccessFully</Alert>
-            ) : (
-              ""
-            )}
-
-            <div className="d-flex gap-2" style={{ alignItems: "center" }}>
-              <Form.Group className="mb-3">
-                <Form.Label>Product Image</Form.Label>
-                <Form.Control
-                  type="file"
-                  onChange={(e) => setManyImages(e.target.files)}
-                  multiple
-                />
-              </Form.Group>
-              <Button
-                style={{ height: "40px", marginTop: "15px" }}
-                onClick={() => uploadImages()}
-              >
-                Upload
-              </Button>
-            </div>
-
+            <Form.Group className="mb-3">
+              <Form.Label>Product Image</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={(e) => setImage(e.target.files)}
+                multiple
+              />
+            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Product Name</Form.Label>
               <Form.Control
@@ -326,7 +285,7 @@ const Product = () => {
                       ref={carouselRef}
                     >
                       {i.images?.map((img, index) => (
-                        <img src={img} alt="" key={index} />
+                        <img src={img.img} alt="" key={index} />
                       ))}
                     </OwlCarousel>
                   </td>
